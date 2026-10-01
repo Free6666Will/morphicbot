@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MorphicBot | Embodied AI & Bio-Inspired Spatial Intelligence</title>
+  <meta name="description" content="MorphicBot combines Gemini Live multimodal intelligence with a Rust-powered bio-inspired spatial network engine, Rockchip RV1126B embedded compute, dual Sony IMX415 vision, and expressive circular LCD eyes.">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              500: '#10b981',
+              600: '#059669',
+              900: '#064e3b',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+          <i class="fa-solid fa-robot text-slate-950 text-xl"></i>
+        </div>
+        <span class="text-2xl font-black tracking-tight text-white">Morphic<span class="text-emerald-400">Bot</span></span>
+      </div>
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+        <a href="#features" class="hover:text-emerald-400 transition-colors">Features</a>
+        <a href="#spatial-engine" class="hover:text-emerald-400 transition-colors">Spatial Engine</a>
+        <a href="#architecture" class="hover:text-emerald-400 transition-colors">Architecture</a>
+        <a href="#specs" class="hover:text-emerald-400 transition-colors">Specifications</a>
+        <a href="#milestones" class="hover:text-emerald-400 transition-colors">Roadmap</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <a href="#contact" class="px-5 py-2.5 rounded-full text-sm font-semibold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-all shadow-md shadow-emerald-500/25 hover:scale-105 active:scale-95">
+          Join Pilot Program
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-36 pb-24 md:pt-48 md:pb-36 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(16,185,129,0.15),rgba(255,255,255,0))]"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+      
+      <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-semibold tracking-wide uppercase mb-8">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Dual Brain: Google Gemini Live Multimodal + Bio-Inspired Spatial Engine</span>
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-8 max-w-5xl mx-auto leading-tight">
+        Embodied AI Companion Robot Powered by <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">Gemini & Physarum Spatial Intelligence</span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-12 font-light leading-relaxed">
+        Fusing high-level cognitive understanding with bio-inspired spatial adaptability. Engineered with a Rockchip RV1126B Linux compute core, dual Sony IMX415 vision, expressive GC9A01 circular eye displays, and holonomic mobility.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-all shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:-translate-y-0.5">
+          Request Pilot Access
+        </a>
+        <a href="#spatial-engine" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-medium border border-slate-800 hover:border-slate-700 bg-slate-900/60 hover:bg-slate-900 text-slate-300 transition-all">
+          Explore Spatial Algorithm
+        </a>
+      </div>
+
+      <!-- Prototype Interactive Showcase Card -->
+      <div class="mt-16 max-w-4xl mx-auto p-4 rounded-3xl border border-slate-800/80 bg-slate-900/40 backdrop-blur-xl shadow-2xl relative">
+        <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-8 flex flex-col md:flex-row items-center justify-between gap-8 text-left">
+          
+          <!-- Robot Eye Simulation -->
+          <div class="flex items-center space-x-6">
+            <div class="w-24 h-24 rounded-full bg-slate-900 border-2 border-emerald-500/40 flex items-center justify-center relative overflow-hidden shadow-inner shadow-emerald-500/20">
+              <div class="w-10 h-10 rounded-full bg-emerald-400 animate-bounce shadow-lg shadow-emerald-400/50"></div>
+            </div>
+            <div class="w-24 h-24 rounded-full bg-slate-900 border-2 border-emerald-500/40 flex items-center justify-center relative overflow-hidden shadow-inner shadow-emerald-500/20">
+              <div class="w-10 h-10 rounded-full bg-emerald-400 animate-bounce shadow-lg shadow-emerald-400/50"></div>
+            </div>
+          </div>
+
+          <div class="flex-1 space-y-2">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 font-mono text-xs border border-emerald-500/20">RV1126B Embedded</span>
+              <span class="px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 font-mono text-xs border border-cyan-500/20">Rust Core Daemon</span>
+              <span class="px-2.5 py-1 rounded bg-blue-500/10 text-blue-400 font-mono text-xs border border-blue-500/20">Gemini Live WSS</span>
+              <span class="px-2.5 py-1 rounded bg-purple-500/10 text-purple-400 font-mono text-xs border border-purple-500/20">Adaptive Slime Engine</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">Multimodal Cognition Meets Bio-Inspired Navigation</h3>
+            <p class="text-sm text-slate-400">Harmonizing live duplex Gemini Live voice, Sony IMX415 visual context, acoustic DoA gaze tracking, and adaptive spatial conductivity networks.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section: Bio-Inspired Spatial Network Engine (Slime Mould Intelligence) -->
+  <section id="spatial-engine" class="py-24 bg-slate-900/60 border-t border-slate-900 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <div class="text-emerald-400 text-xs font-semibold tracking-wider uppercase mb-2">Algorithmic Innovation</div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Bio-Inspired Adaptive Spatial Network Engine</h2>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          Inspired by <em>Physarum polycephalum</em> dynamics. Rather than static graph searches, our custom Rust engine models space as a flux-driven continuous conductivity field for dynamic obstacle bypass and adaptive corridor discovery.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="p-8 rounded-2xl border border-slate-800 bg-slate-950/80">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-6">
+            <i class="fa-solid fa-wave-square"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Flux-Driven Adaptation</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Employs potential difference equations and non-linear conductivity updates: high-demand corridors reinforce while dormant paths decay smoothly over time.
+          </p>
+          <div class="p-3 rounded-lg bg-slate-900 font-mono text-[11px] text-slate-300 border border-slate-800">
+            dD/dt = η|Q|^α - γD
+          </div>
+        </div>
+
+        <div class="p-8 rounded-2xl border border-slate-800 bg-slate-950/80">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-6">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Native Rust Optimization</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Engineered from scratch in Rust with zero heavy framework bloat. Built for zero-cost abstraction, predictable memory latency, and future cross-compilation onto ARM edge targets.
+          </p>
+          <div class="p-3 rounded-lg bg-slate-900 font-mono text-[11px] text-emerald-400 border border-slate-800">
+            Jacobi Solver • Modular Crates
+          </div>
+        </div>
+
+        <div class="p-8 rounded-2xl border border-slate-800 bg-slate-950/80">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl mb-6">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Google Cloud Scale Simulations</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Leveraging Google Cloud compute clusters for large-scale Monte Carlo parameter sensitivity sweeps, benchmarking candidate channel generation before physical embedded deployment.
+          </p>
+          <div class="p-3 rounded-lg bg-slate-900 font-mono text-[11px] text-blue-400 border border-slate-800">
+            Vertex AI • Batch Simulation
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Core Features -->
+  <section id="features" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Holistic Companion Experience</h2>
+        <p class="text-slate-400">Seamless integration of natural conversation, visual perception, and expressive physical embodiment.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Card 1 -->
+        <div class="p-8 rounded-2xl border border-slate-800 bg-slate-950/60 hover:border-emerald-500/40 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-microphone-lines"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Duplex Gemini Live Voice</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4">
+            Real-time bidirectional speech streams with seamless user barge-in and audio cancellation. Children converse spontaneously with zero awkward waiting.
+          </p>
+          <span class="text-xs text-emerald-400/80 font-mono">ReSpeaker XVF3800 AEC + Live WSS</span>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="p-8 rounded-2xl border border-slate-800 bg-slate-950/60 hover:border-emerald-500/40 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Multimodal Visual Exploration</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4">
+            Show toys, sketches, or everyday items. The robot grabs live frames via Sony IMX415 sensors, analyzes semantics via Gemini Vision, and spins educational tales.
+          </p>
+          <span class="text-xs text-cyan-400/80 font-mono">Dual Sony IMX415 + Gemini Vision Relay</span>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="p-8 rounded-2xl border border-slate-800 bg-slate-950/60 hover:border-emerald-500/40 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Holonomic Smooth Mobility</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4">
+            A three-wheel omnidirectional chassis (Ø142mm base) driven by high-torque L-type 520 geared motors, engineered for indoor domestic traversal.
+          </p>
+          <span class="text-xs text-teal-400/80 font-mono">Omni-directional Drive + Fall-prevention ToF</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technical Architecture -->
+  <section id="architecture" class="py-24 bg-slate-900/30 border-t border-slate-900 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="text-emerald-400 text-xs font-semibold tracking-wider uppercase mb-2">System Design</div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Multi-Tier High-Integrity Architecture</h2>
+        <p class="text-slate-400">Strict separation of high-level cloud cognition, edge sensory coordination, and safety-critical motion fail-safes.</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto space-y-4">
+        
+        <!-- Cloud Intelligence Layer -->
+        <div class="p-6 rounded-2xl border border-blue-500/30 bg-blue-950/20 backdrop-blur-md">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center space-x-3">
+              <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold uppercase">Cloud Tier</span>
+              <h4 class="text-lg font-bold text-white">Google Cloud Vertex AI & Gemini Live Platform</h4>
+            </div>
+            <span class="text-xs text-slate-400 font-mono">Encrypted WSS / gRPC</span>
+          </div>
+          <p class="text-sm text-slate-300">
+            Real-time multimodal speech comprehension, visual contextual reasoning, situational storytelling generation, and large-scale spatial simulation orchestration.
+          </p>
+        </div>
+
+        <div class="flex justify-center text-slate-600 text-lg">
+          <i class="fa-solid fa-arrow-down-long"></i>
+        </div>
+
+        <!-- Edge High-Level Compute Layer -->
+        <div class="p-6 rounded-2xl border border-emerald-500/30 bg-emerald-950/20 backdrop-blur-md">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center space-x-3">
+              <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase">Edge Compute Tier</span>
+              <h4 class="text-lg font-bold text-white">Rockchip RV1126B SoC (Linux + Rust Application Daemon)</h4>
+            </div>
+            <span class="text-xs text-slate-400 font-mono">Unix Domain Socket IPC</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-slate-300 pt-2">
+            <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+              <strong class="text-emerald-400 block mb-1">Vision & NPU Pipeline</strong>
+              Dual Sony IMX415 capture, hardware ISP/video encoding, local face/human detection.
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+              <strong class="text-emerald-400 block mb-1">Audio DSP Pipeline</strong>
+              ALSA 6-channel 16kHz capture, reSpeaker XVF3800 hardware AEC & sound angle estimation.
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+              <strong class="text-emerald-400 block mb-1">State & Gaze Controller</strong>
+              SPI drive for twin GC9A01 LCDs, dynamic pupil animations, Wayland UI compositor.
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center text-slate-600 text-lg">
+          <i class="fa-solid fa-arrow-down-long"></i>
+        </div>
+
+        <!-- Real-Time Hardware & Safety Tier -->
+        <div class="p-6 rounded-2xl border border-amber-500/30 bg-amber-950/20 backdrop-blur-md">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center space-x-3">
+              <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold uppercase">Real-Time Control Tier</span>
+              <h4 class="text-lg font-bold text-white">Deterministic Motion & Safety Controller (MCU Subsystem)</h4>
+            </div>
+            <span class="text-xs text-slate-400 font-mono">UART / Fail-Safe Loop</span>
+          </div>
+          <p class="text-sm text-slate-300">
+            Independent motion brake conditions, 3-wheel holonomic kinematics, VL53L0X optical drop detection, ICM-42688-P 6-axis IMU, and RPLIDAR C1 collision guard.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technical Specifications Table -->
+  <section id="specs" class="py-24 bg-slate-900/40 border-t border-slate-900">
+    <div class="max-w-5xl mx-auto px-6">
+      
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Verified Hardware Specifications</h2>
+        <p class="text-slate-400">Strictly engineered with verified engineering prototypes.</p>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-slate-800">
+        <table class="w-full text-left text-sm text-slate-300">
+          <thead class="bg-slate-900/80 text-xs uppercase tracking-wider text-slate-400 border-b border-slate-800">
+            <tr>
+              <th class="px-6 py-4">Component Subsystem</th>
+              <th class="px-6 py-4">Hardware Specification</th>
+              <th class="px-6 py-4">Functional Role</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800/60 bg-slate-950/60 font-mono text-xs">
+            <tr>
+              <td class="px-6 py-4 font-semibold text-white">Main Compute SoC</td>
+              <td class="px-6 py-4 text-emerald-400">Rockchip RV1126B (Forlinx OK1126B-S)</td>
+              <td class="px-6 py-4 text-slate-400">Embedded Linux, NPU acceleration, Rust core daemon</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 font-semibold text-white">Vision Sensor</td>
+              <td class="px-6 py-4 text-emerald-400">Sony IMX415 (MIPI-CSI, 4K Support)</td>
+              <td class="px-6 py-4 text-slate-400">Dual camera stream, 1280x720 30FPS low-latency feed</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 font-semibold text-white">Audio Frontend</td>
+              <td class="px-6 py-4 text-emerald-400">ReSpeaker / XVF3800 Array (USB)</td>
+              <td class="px-6 py-4 text-slate-400">6-Channel 16kHz capture, hardware AEC & DoA direction</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 font-semibold text-white">Expressive Eye Displays</td>
+              <td class="px-6 py-4 text-emerald-400">Dual Waveshare 1.28" GC9A01 LCD (SPI)</td>
+              <td class="px-6 py-4 text-slate-400">240x240 circular panels for natural pupil & gaze animation</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 font-semibold text-white">Mobility Chassis</td>
+              <td class="px-6 py-4 text-emerald-400">3-Wheel Holonomic (Ø142mm Base)</td>
+              <td class="px-6 py-4 text-slate-400">L-type 520 geared motors with clamped couplers</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 font-semibold text-white">Safety & Navigation</td>
+              <td class="px-6 py-4 text-emerald-400">RPLIDAR C1 + VL53L0X ToF + ICM-42688-P</td>
+              <td class="px-6 py-4 text-slate-400">2D planar scanning, floor edge detection, pick-up sensing</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 font-semibold text-white">Spatial Intelligence</td>
+              <td class="px-6 py-4 text-emerald-400">Physarum Adaptive Network Engine (Rust)</td>
+              <td class="px-6 py-4 text-slate-400">Dynamic conductivity field mapping & candidate corridor discovery</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 font-semibold text-white">Cloud AI Engine</td>
+              <td class="px-6 py-4 text-emerald-400">Google Gemini Live (Multimodal WebSocket)</td>
+              <td class="px-6 py-4 text-slate-400">Continuous bidirectional voice stream & visual context reasoning</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Engineering Milestones / Roadmap -->
+  <section id="milestones" class="py-24 relative">
+    <div class="max-w-5xl mx-auto px-6">
+      
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Engineering Milestones</h2>
+        <p class="text-slate-400">From verified module validation to scalable cloud deployment.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        
+        <div class="p-6 rounded-2xl border border-emerald-500/40 bg-slate-900/60 relative">
+          <div class="text-xs font-bold text-emerald-400 mb-2 font-mono">PHASE 01 • COMPLETED</div>
+          <h4 class="text-base font-bold text-white mb-2">Core Interaction Prototype</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Integrated dual Sony cameras, reSpeaker DoA acoustic gaze, SPI dual-eye animation, and initial Gemini Live streaming prototype.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-emerald-500/40 bg-slate-900/60 relative">
+          <div class="text-xs font-bold text-emerald-400 mb-2 font-mono">PHASE 02 • IN PROGRESS</div>
+          <h4 class="text-base font-bold text-white mb-2">Chassis & Safety Loop</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Closing the loop on the 3-wheel omni base, integrating real-time IMU pickup detection, and implementing independent hardware fall-prevention stop.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/60 relative">
+          <div class="text-xs font-bold text-slate-500 mb-2 font-mono">PHASE 03 • UPCOMING</div>
+          <h4 class="text-base font-bold text-white mb-2">GCP Simulation & Trials</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Executing large-scale cloud spatial sweeps, model latency benchmarking, and deploying pilot units to domestic households for trial feedback.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/60 relative">
+          <div class="text-xs font-bold text-slate-500 mb-2 font-mono">PHASE 04 • ROADMAP</div>
+          <h4 class="text-base font-bold text-white mb-2">Production Manufacturing</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Custom integrated mainboard PCB layout, durable injection molded consumer enclosure, and enterprise fleet management on Google Cloud.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact & Early Access Section -->
+  <section id="contact" class="py-24 bg-slate-900/30 border-t border-slate-900 relative">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      
+      <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-2xl mx-auto mb-8">
+        <i class="fa-solid fa-paper-plane"></i>
+      </div>
+
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Request Developer Pilot Access</h2>
+      <p class="text-slate-400 mb-10 max-w-xl mx-auto text-sm leading-relaxed">
+        Interested in early trial units, co-developing interactive companion experiences, or technical partnership? Contact our engineering team.
+      </p>
+
+      <form class="space-y-4 text-left max-w-md mx-auto" onsubmit="event.preventDefault(); alert('Thank you for your interest! We will contact you shortly.');">
+        <div>
+          <label class="block text-xs font-medium text-slate-400 mb-1">Your Name</label>
+          <input type="text" required placeholder="Alex Smith" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-emerald-500 focus:outline-none text-white text-sm">
+        </div>
+        <div>
+          <label class="block text-xs font-medium text-slate-400 mb-1">Email Address</label>
+          <input type="email" required placeholder="alex@organization.com" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-emerald-500 focus:outline-none text-white text-sm">
+        </div>
+        <div>
+          <label class="block text-xs font-medium text-slate-400 mb-1">Organization / Interest Role</label>
+          <select class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-emerald-500 focus:outline-none text-white text-sm">
+            <option>Early Adopter / Family Trial</option>
+            <option>Robotics / AI Developer</option>
+            <option>Commercial Partner / Investor</option>
+            <option>Academic / Research Collaborator</option>
+          </select>
+        </div>
+        <button type="submit" class="w-full py-3.5 rounded-xl font-semibold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-all shadow-lg shadow-emerald-500/25">
+          Submit Application
+        </button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- Standard Footer (Compliant with Google Startup Review) -->
+  <footer class="py-12 border-t border-slate-900 bg-slate-950 text-slate-500 text-xs">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center space-x-3">
+        <span class="text-white font-bold text-base">Morphic<span class="text-emerald-400">Bot</span></span>
+        <span>© 2026 Morphic Robotics Technologies. All rights reserved.</span>
+      </div>
+      <div class="flex items-center space-x-6">
+        <a href="#" class="hover:text-slate-300">Privacy Policy</a>
+        <a href="#" class="hover:text-slate-300">Terms of Service</a>
+        <a href="#" class="hover:text-slate-300">Contact: contact@morphicbot.com</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
