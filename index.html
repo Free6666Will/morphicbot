@@ -91,7 +91,7 @@
         <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 md:p-8 flex flex-col gap-8 text-left">
           
           <!-- Robot Eye Simulation (Full-Width Plush Box, No Green Circles or Text) -->
-          <a href="./eyes/" id="stage" class="w-full flex justify-center items-center gap-[6%] py-8 md:py-12 px-6 rounded-3xl bg-[#756553] cursor-pointer transition-transform duration-200 hover:scale-[1.005]" aria-label="Interactive Robot Eyes - Click to open studio">
+          <a href="./eyes/" id="stage" data-transparent="true" class="w-full flex justify-center items-center gap-[6%] py-8 md:py-12 px-6 rounded-3xl bg-transparent cursor-pointer transition-transform duration-200 hover:scale-[1.005]" aria-label="Interactive Robot Eyes - Click to open studio">
             <canvas id="hero-left-eye" width="480" height="480" class="w-[42%] max-w-[320px] h-auto aspect-square pointer-events-none block"></canvas>
             <canvas id="hero-right-eye" width="480" height="480" class="w-[42%] max-w-[320px] h-auto aspect-square pointer-events-none block"></canvas>
           </a>
@@ -477,8 +477,8 @@
   </footer>
 
   <!-- Interactive Robot Eyes (Koukou Engine) -->
-  <script src="./eyes/engine.js?v=3"></script>
-  <script src="./eyes/renderer.js?v=3"></script>
+  <script src="./eyes/engine.js?v=4"></script>
+  <script src="./eyes/renderer.js?v=4"></script>
   <script>
   (function() {
     const leftCanvas = document.getElementById('hero-left-eye');
