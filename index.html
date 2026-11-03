@@ -91,13 +91,18 @@
         <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-8 flex flex-col md:flex-row items-center justify-between gap-8 text-left">
           
           <!-- Robot Eye Simulation -->
-          <a href="./eyes/" class="flex items-center space-x-6 group cursor-pointer" title="点击体验互动眼睛">
-            <div class="w-24 h-24 rounded-full bg-slate-900 border-2 border-emerald-500/40 group-hover:border-emerald-400 flex items-center justify-center relative overflow-hidden shadow-inner shadow-emerald-500/20 transition-all">
-              <div class="w-10 h-10 rounded-full bg-emerald-400 animate-bounce shadow-lg shadow-emerald-400/50"></div>
+          <a href="./eyes/" id="hero-eye-stage" class="group flex flex-col items-center gap-3 p-3.5 rounded-3xl bg-slate-900/80 border border-emerald-500/30 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/25 transition-all cursor-pointer" title="点击进入完整互动眼睛工作室">
+            <div class="flex items-center space-x-4 md:space-x-5">
+              <div class="relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-emerald-500/40 group-hover:border-emerald-400 shadow-inner shadow-emerald-500/20 bg-[#756553] flex items-center justify-center transition-all">
+                <canvas id="hero-left-eye" width="480" height="480" class="w-full h-full aspect-square pointer-events-none block"></canvas>
+              </div>
+              <div class="relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-emerald-500/40 group-hover:border-emerald-400 shadow-inner shadow-emerald-500/20 bg-[#756553] flex items-center justify-center transition-all">
+                <canvas id="hero-right-eye" width="480" height="480" class="w-full h-full aspect-square pointer-events-none block"></canvas>
+              </div>
             </div>
-            <div class="w-24 h-24 rounded-full bg-slate-900 border-2 border-emerald-500/40 group-hover:border-emerald-400 flex items-center justify-center relative overflow-hidden shadow-inner shadow-emerald-500/20 transition-all">
-              <div class="w-10 h-10 rounded-full bg-emerald-400 animate-bounce shadow-lg shadow-emerald-400/50"></div>
-            </div>
+            <span class="text-[11px] font-mono text-emerald-400 group-hover:text-emerald-300 flex items-center gap-1.5 transition-colors">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> 鼠标跟随 · 点击进入互动
+            </span>
           </a>
 
           <div class="flex-1 space-y-2">
@@ -478,5 +483,69 @@
     </div>
   </footer>
 
+  <!-- Interactive Robot Eyes (Koukou Engine) -->
+  <script src="./eyes/engine.js"></script>
+  <script src="./eyes/renderer.js"></script>
+  <script>
+  (function() {
+    const leftCanvas = document.getElementById('hero-left-eye');
+    const rightCanvas = document.getElementById('hero-right-eye');
+    const stage = document.getElementById('hero-eye-stage');
+    if (!leftCanvas || !rightCanvas || !window.Koukou || !window.renderKoukouEmotion) return;
+
+    const engine = new Koukou.EmotionEngine();
+    // Default to NORMAL ("平常")
+    engine.setEmotion('NORMAL');
+    
+    let idleTimer = null;
+
+    function handlePointer(clientX, clientY) {
+      if (!stage) return;
+      const rect = stage.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      
+      const spanX = Math.max(window.innerWidth * 0.45, 300);
+      const spanY = Math.max(window.innerHeight * 0.45, 240);
+      const gx = Math.max(-1, Math.min(1, (clientX - cx) / spanX));
+      const gy = Math.max(-1, Math.min(1, (clientY - cy) / spanY));
+
+      engine.setGazeTarget(gx, gy);
+
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(() => {
+        // Return to natural roaming if mouse stops
+        engine.target = null;
+      }, 2500);
+    }
+
+    window.addEventListener('pointermove', (e) => {
+      handlePointer(e.clientX, e.clientY);
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches[0]) {
+        handlePointer(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', () => {
+      engine.target = null;
+    });
+
+    let lastTime = performance.now();
+    function renderLoop(now) {
+      const dt = Math.min(0.05, (now - lastTime) / 1000);
+      lastTime = now;
+      engine.update(dt);
+
+      renderKoukouEmotion(leftCanvas, engine, 1);
+      renderKoukouEmotion(rightCanvas, engine, -1);
+
+      requestAnimationFrame(renderLoop);
+    }
+    requestAnimationFrame(renderLoop);
+  })();
+  </script>
 </body>
 </html>

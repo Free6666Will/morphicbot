@@ -14,7 +14,7 @@ function buildPlush(){if(plushColor===lid.color)return;plushColor=lid.color;cons
  // Broad soft tufts beneath the fine pile give the fabric larger clumps.
  for(let i=0;i<2200;i++){let x=rnd()*480,y=rnd()*480,r=2.5+rnd()*4.5;let g=p.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,rnd()>.5?'rgba(255,244,219,.18)':'rgba(27,19,14,.19)');g.addColorStop(1,'rgba(0,0,0,0)');p.fillStyle=g;p.fillRect(x-r,y-r,2*r,2*r);}
  p.lineCap='round';for(let i=0;i<19000;i++){let x=rnd()*480,y=rnd()*480,a=rnd()*Math.PI*2,len=1.2+rnd()*4.2;p.strokeStyle=rnd()>.5?'rgba(255,247,230,.13)':'rgba(30,22,18,.15)';p.lineWidth=.7+rnd()*.9;p.beginPath();p.moveTo(x,y);p.quadraticCurveTo(x+Math.cos(a+.5)*len*.6,y+Math.sin(a+.5)*len*.6,x+Math.cos(a)*len,y+Math.sin(a)*len);p.stroke();}
- const stage=document.querySelector('#stage');stage.style.backgroundImage=`url(${plush.toDataURL()})`;stage.style.backgroundSize='240px 240px';}
+ const stage=document.querySelector('#stage');if(stage){stage.style.backgroundImage=`url(${plush.toDataURL()})`;stage.style.backgroundSize='240px 240px';}}
 
 buildPlush();
 
