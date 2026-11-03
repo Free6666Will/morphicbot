@@ -91,7 +91,7 @@
         <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-8 flex flex-col md:flex-row items-center justify-between gap-8 text-left">
           
           <!-- Robot Eye Simulation -->
-          <a href="./eyes/" id="hero-eye-stage" class="group flex flex-col items-center gap-3 p-3.5 rounded-3xl bg-slate-900/80 border border-emerald-500/30 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/25 transition-all cursor-pointer" title="点击进入完整互动眼睛工作室">
+          <a href="./eyes/" id="stage" class="group flex flex-col items-center gap-3 p-3.5 rounded-3xl bg-slate-900/80 border border-emerald-500/30 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/25 transition-all cursor-pointer" title="点击进入完整互动眼睛工作室">
             <div class="flex items-center space-x-4 md:space-x-5">
               <div class="relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-emerald-500/40 group-hover:border-emerald-400 shadow-inner shadow-emerald-500/20 bg-[#756553] flex items-center justify-center transition-all">
                 <canvas id="hero-left-eye" width="480" height="480" class="w-full h-full aspect-square pointer-events-none block"></canvas>
@@ -478,19 +478,19 @@
       <div class="flex items-center space-x-6">
         <a href="#" class="hover:text-slate-300">Privacy Policy</a>
         <a href="#" class="hover:text-slate-300">Terms of Service</a>
-        <a href="#" class="hover:text-slate-300">Contact: contact@morphicbot.com</a>
+        <a href="#" class="hover:text-slate-300">Contact: contact@morphicbot.win</a>
       </div>
     </div>
   </footer>
 
   <!-- Interactive Robot Eyes (Koukou Engine) -->
-  <script src="./eyes/engine.js"></script>
-  <script src="./eyes/renderer.js"></script>
+  <script src="./eyes/engine.js?v=2"></script>
+  <script src="./eyes/renderer.js?v=2"></script>
   <script>
   (function() {
     const leftCanvas = document.getElementById('hero-left-eye');
     const rightCanvas = document.getElementById('hero-right-eye');
-    const stage = document.getElementById('hero-eye-stage');
+    const stage = document.getElementById('stage');
     if (!leftCanvas || !rightCanvas || !window.Koukou || !window.renderKoukouEmotion) return;
 
     const engine = new Koukou.EmotionEngine();
