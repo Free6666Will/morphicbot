@@ -46,7 +46,7 @@
         <a href="#architecture" class="hover:text-emerald-400 transition-colors">Architecture</a>
         <a href="#specs" class="hover:text-emerald-400 transition-colors">Specifications</a>
         <a href="#milestones" class="hover:text-emerald-400 transition-colors">Roadmap</a>
-        <a href="./eyes/" class="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors flex items-center gap-1.5"><i class="fa-solid fa-eye text-xs"></i> 体验互动眼睛</a>
+        <a href="./eyes/" class="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors flex items-center gap-1.5"><i class="fa-solid fa-eye text-xs"></i> Interactive Eyes</a>
       </nav>
       <div class="flex items-center space-x-4">
         <a href="#contact" class="px-5 py-2.5 rounded-full text-sm font-semibold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-all shadow-md shadow-emerald-500/25 hover:scale-105 active:scale-95">
@@ -76,7 +76,7 @@
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="./eyes/" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-all shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:-translate-y-0.5 flex items-center justify-center gap-2">
-          <i class="fa-solid fa-eye"></i> 体验互动眼睛
+          <i class="fa-solid fa-eye"></i> Interactive Eyes
         </a>
         <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-medium border border-slate-800 hover:border-slate-700 bg-slate-900/60 hover:bg-slate-900 text-slate-300 transition-all">
           Request Pilot Access
@@ -87,36 +87,29 @@
       </div>
 
       <!-- Prototype Interactive Showcase Card -->
-      <div class="mt-16 max-w-4xl mx-auto p-4 rounded-3xl border border-slate-800/80 bg-slate-900/40 backdrop-blur-xl shadow-2xl relative">
-        <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-8 flex flex-col md:flex-row items-center justify-between gap-8 text-left">
+      <div class="mt-16 w-full p-4 md:p-6 rounded-3xl border border-slate-800/80 bg-slate-900/40 backdrop-blur-xl shadow-2xl relative">
+        <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 md:p-8 flex flex-col gap-8 text-left">
           
-          <!-- Robot Eye Simulation -->
-          <a href="./eyes/" id="stage" class="group flex flex-col items-center gap-3 p-3.5 rounded-3xl bg-slate-900/80 border border-emerald-500/30 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/25 transition-all cursor-pointer" title="点击进入完整互动眼睛工作室">
-            <div class="flex items-center space-x-4 md:space-x-5">
-              <div class="relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-emerald-500/40 group-hover:border-emerald-400 shadow-inner shadow-emerald-500/20 bg-[#756553] flex items-center justify-center transition-all">
-                <canvas id="hero-left-eye" width="480" height="480" class="w-full h-full aspect-square pointer-events-none block"></canvas>
-              </div>
-              <div class="relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-emerald-500/40 group-hover:border-emerald-400 shadow-inner shadow-emerald-500/20 bg-[#756553] flex items-center justify-center transition-all">
-                <canvas id="hero-right-eye" width="480" height="480" class="w-full h-full aspect-square pointer-events-none block"></canvas>
-              </div>
-            </div>
-            <span class="text-[11px] font-mono text-emerald-400 group-hover:text-emerald-300 flex items-center gap-1.5 transition-colors">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> 鼠标跟随 · 点击进入互动
-            </span>
+          <!-- Robot Eye Simulation (Full-Width Plush Box, No Green Circles or Text) -->
+          <a href="./eyes/" id="stage" class="w-full flex justify-center items-center gap-[6%] py-8 md:py-12 px-6 rounded-3xl bg-[#756553] cursor-pointer transition-transform duration-200 hover:scale-[1.005]" aria-label="Interactive Robot Eyes - Click to open studio">
+            <canvas id="hero-left-eye" width="480" height="480" class="w-[42%] max-w-[320px] h-auto aspect-square pointer-events-none block"></canvas>
+            <canvas id="hero-right-eye" width="480" height="480" class="w-[42%] max-w-[320px] h-auto aspect-square pointer-events-none block"></canvas>
           </a>
 
-          <div class="flex-1 space-y-2">
-            <div class="flex flex-wrap items-center gap-2">
-              <span class="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 font-mono text-xs border border-emerald-500/20">RV1126B Embedded</span>
-              <span class="px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 font-mono text-xs border border-cyan-500/20">Rust Core Daemon</span>
-              <span class="px-2.5 py-1 rounded bg-blue-500/10 text-blue-400 font-mono text-xs border border-blue-500/20">Gemini Live WSS</span>
-              <span class="px-2.5 py-1 rounded bg-purple-500/10 text-purple-400 font-mono text-xs border border-purple-500/20">Adaptive Slime Engine</span>
+          <div class="w-full flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div class="space-y-2">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 font-mono text-xs border border-emerald-500/20">RV1126B Embedded</span>
+                <span class="px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 font-mono text-xs border border-cyan-500/20">Rust Core Daemon</span>
+                <span class="px-2.5 py-1 rounded bg-blue-500/10 text-blue-400 font-mono text-xs border border-blue-500/20">Gemini Live WSS</span>
+                <span class="px-2.5 py-1 rounded bg-purple-500/10 text-purple-400 font-mono text-xs border border-purple-500/20">Adaptive Slime Engine</span>
+              </div>
+              <h3 class="text-xl font-bold text-white">Multimodal Cognition Meets Bio-Inspired Navigation</h3>
+              <p class="text-sm text-slate-400">Harmonizing live duplex Gemini Live voice, Sony IMX415 visual context, acoustic DoA gaze tracking, and adaptive spatial conductivity networks.</p>
             </div>
-            <h3 class="text-xl font-bold text-white">Multimodal Cognition Meets Bio-Inspired Navigation</h3>
-            <p class="text-sm text-slate-400">Harmonizing live duplex Gemini Live voice, Sony IMX415 visual context, acoustic DoA gaze tracking, and adaptive spatial conductivity networks.</p>
-            <div class="pt-2">
-              <a href="./eyes/" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 text-xs font-semibold transition-all">
-                <i class="fa-solid fa-eye"></i> 体验互动眼睛 (8种情绪 · 视线跟随) →
+            <div class="shrink-0">
+              <a href="./eyes/" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 text-xs font-semibold transition-all">
+                <i class="fa-solid fa-eye"></i> Interactive Eye Studio (8 Emotions & Gaze Control) →
               </a>
             </div>
           </div>
@@ -484,8 +477,8 @@
   </footer>
 
   <!-- Interactive Robot Eyes (Koukou Engine) -->
-  <script src="./eyes/engine.js?v=2"></script>
-  <script src="./eyes/renderer.js?v=2"></script>
+  <script src="./eyes/engine.js?v=3"></script>
+  <script src="./eyes/renderer.js?v=3"></script>
   <script>
   (function() {
     const leftCanvas = document.getElementById('hero-left-eye');
@@ -494,7 +487,7 @@
     if (!leftCanvas || !rightCanvas || !window.Koukou || !window.renderKoukouEmotion) return;
 
     const engine = new Koukou.EmotionEngine();
-    // Default to NORMAL ("平常")
+    // Default to NORMAL state
     engine.setEmotion('NORMAL');
     
     let idleTimer = null;

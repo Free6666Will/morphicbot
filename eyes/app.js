@@ -26,7 +26,7 @@ function frame(now){
  if(!$('pause').checked)engine.update(dt*Number($('speed').value));
  renderKoukouEmotion($('left'),engine,1);renderKoukouEmotion($('right'),engine,-1);
  if(previous!==engine.emotion){syncUI();previous=engine.emotion;}
- $('status').textContent=Koukou.presets[engine.emotion].label+' · 上眼皮 '+Math.round(engine.params.lid*100)+'% · 瞳孔 '+Math.round(engine.params.pupil*100)+'% · '+($('pause').checked?'已暂停':$('speed').value==='0.2'?'5倍慢放':'正常速度');
+ $('status').textContent=Koukou.presets[engine.emotion].label+' · Upper Lid '+Math.round(engine.params.lid*100)+'% · Pupil '+Math.round(engine.params.pupil*100)+'% · '+($('pause').checked?'Paused':$('speed').value==='0.2'?'0.2x Slow-Mo':'1x Normal Speed');
  requestAnimationFrame(frame);
 }
 syncUI();requestAnimationFrame(frame);

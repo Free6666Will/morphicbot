@@ -4,14 +4,14 @@ const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),lerp=(a,b,t)=>a+(b-a)*t;
 const smooth=t=>t*t*(3-2*t);
 const base={lid:0,lower:0,tilt:0,pupil:1,sleep:0,shimmer:0,breath:.03,hz:.4,follow:9,micro:1.5,close:.07,hold:.02,open:.16,interval:[3.5,5.5],double:.15,gaze:[0,0]};
 const presets={
-NORMAL:{label:'平常',description:'放松注视，轻微巡视和自然眨眼。'},
-HAPPY:{label:'开心',description:'柔和笑眼，瞳孔放大，高光轻轻呼吸。',lid:.12,lower:.24,pupil:1.1,shimmer:1,close:.12,open:.23},
-BEING_HUGGED:{label:'被抱',description:'仰望靠近的人，偶尔移开视线，再转回来。',pupil:1.2,gaze:[0,-.6],double:.35},
-SLEEPY:{label:'困倦',description:'半睁眼，视线低垂，缓慢而沉重地眨眼。',lid:.55,breath:.012,hz:.16,follow:2,micro:0,gaze:[0,.4],close:.2,hold:.2,open:.35,interval:[8,12],double:0},
-SLEEPING:{label:'睡眠',description:'毛绒眼皮闭合，柔和眼缝随呼吸起伏。',lid:1,sleep:1,micro:0,breath:0,follow:2,double:0},
-CURIOUS:{label:'好奇',description:'专注倾听，先凝视两秒，然后轻眨一下。',pupil:1.08,gaze:[.25,-.35],micro:0,double:0},
-SURPRISED:{label:'惊讶',description:'快速收瞳，看向声音来源，短促微颤后恢复。',pupil:.75,follow:18,micro:0,double:0},
-SULKING:{label:'傲娇',description:'轻压眼皮，带一点倾斜，故意看向一旁。',lid:.25,tilt:8,gaze:[-.85,0],close:.2,hold:.12,open:.32,interval:[6,10],double:0,micro:.5}
+NORMAL:{label:'Normal',description:'Relaxed gaze with subtle roaming and natural blinking.'},
+HAPPY:{label:'Happy',description:'Soft smiling eyes, dilated pupils, and gentle highlight breathing.',lid:.12,lower:.24,pupil:1.1,shimmer:1,close:.12,open:.23},
+BEING_HUGGED:{label:'Hugged',description:'Looking up warmly at someone close, occasionally glancing away and returning.',pupil:1.2,gaze:[0,-.6],double:.35},
+SLEEPY:{label:'Sleepy',description:'Half-closed lids, drooping gaze, and slow, heavy blinks.',lid:.55,breath:.012,hz:.16,follow:2,micro:0,gaze:[0,.4],close:.2,hold:.2,open:.35,interval:[8,12],double:0},
+SLEEPING:{label:'Sleeping',description:'Plush eyelids closed, gentle eye seam rising and falling with breathing.',lid:1,sleep:1,micro:0,breath:0,follow:2,double:0},
+CURIOUS:{label:'Curious',description:'Attentive listening: holds a focused gaze for two seconds before a light blink.',pupil:1.08,gaze:[.25,-.35],micro:0,double:0},
+SURPRISED:{label:'Surprised',description:'Rapid pupil constriction toward sound source, brief micro-tremor, then recovery.',pupil:.75,follow:18,micro:0,double:0},
+SULKING:{label:'Sulking',description:'Slightly lowered tilted lids, deliberately looking away to the side.',lid:.25,tilt:8,gaze:[-.85,0],close:.2,hold:.12,open:.32,interval:[6,10],double:0,micro:.5}
 };
 const keys=['lid','lower','tilt','pupil','sleep','shimmer','breath','hz','follow','micro'];
 class EmotionEngine{
