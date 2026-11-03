@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MorphicBot · 互动眼睛</title>
+<meta name="description" content="点击体验八种眼睛表情，让眼睛跟随你的鼠标或手指。">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#111219;color:#eee;font:15px system-ui}main{max-width:940px;margin:24px auto;padding:20px}h1{font-size:clamp(24px,5vw,36px)}p{color:#b8bac7;line-height:1.7}a{color:#efc978}.eyes{display:flex;justify-content:center;gap:5%;padding:clamp(12px,4vw,28px);border-radius:24px;background:#756553;touch-action:pan-y}canvas{width:42%;max-width:320px;height:auto;aspect-ratio:1}.buttons{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}button,label,select{background:#252635;color:#eee;border:1px solid #505364;padding:12px;border-radius:9px}button{cursor:pointer;min-height:44px}button[aria-pressed=true]{background:#86652d;border-color:#efc978}label{display:inline-flex;gap:8px;align-items:center}small{color:#b5b6c0}#status{font:13px monospace;color:#c1dace}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #efc978;outline-offset:3px}
+</style></head><body><main>
+<a href="../">← 返回 MorphicBot</a><h1>和这双眼睛打个招呼</h1><p>选择一种表情，看看它的回应。选择“鼠标 / 触摸跟随”，在眼睛区域移动鼠标或拖动手指。</p><p id="description" aria-live="polite"></p>
+<div class="eyes" id="stage" role="group" aria-label="双眼动画"><canvas id="left" width="480" height="480" aria-label="左眼"></canvas><canvas id="right" width="480" height="480" aria-label="右眼"></canvas></div>
+<div id="emotions" class="buttons" aria-label="选择表情"></div>
+<div class="buttons"><button id="blink">眨眼</button><button id="center">视线回中</button><label>视线控制 <select id="gazeMode"><option value="emotion">表情自动</option><option value="pointer">鼠标 / 触摸跟随</option></select></label><label>速度 <select id="speed"><option value="1">正常速度</option><option value="0.2">5倍慢放</option></select></label><label><input type="checkbox" id="pause">暂停动画</label></div>
+<div class="buttons"><label>来源方向 <select id="direction"><option value="front">正面 / 上方</option><option value="left">左侧</option><option value="right">右侧</option></select></label><label><input type="checkbox" id="autoSleep" checked>困倦一分钟后入睡</label></div>
+<p id="status"></p><small>浏览器互动演示 · 不连接或控制真实机器人。LOVOT 风格研究演示，非官方产品或合作项目。</small><noscript><p>请启用 JavaScript 以体验互动眼睛。</p></noscript></main>
+<script src="engine.js"></script><script src="renderer.js"></script><script src="app.js"></script><script src="web.js"></script></body></html>
